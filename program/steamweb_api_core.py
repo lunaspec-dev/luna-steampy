@@ -22,6 +22,8 @@ from datetime import datetime # For converting unix timestamps to human-readable
 import tqdm # This isnt strictly necessary, but it's an easy library to use for progress bars
 # Some requests will need to be done in small batches over time as to not upset the Steam overlords.
 
+from database import MongoDBManager # Handles the database connections and operations
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s') # basic logging configuration
 auth_file = Path(__file__).parent.parent / "auth" / ".env" # Get the path to the .env file relative to this script
 dotenv.load_dotenv(auth_file) # Load environment variables from .env file
@@ -59,6 +61,8 @@ class SteamAPIHandler:
         self.base_url = "https://api.steampowered.com" # Base URL for the Steam API
         self.partner_url = "https://partner.steam-api.com" # Base URL for the Steam Partner API
         self.available_endpoints = ALL_ENDPOINTS # Available endpoints loaded from the JSON file
+
+        self.database_manager = MongoDBManager() # Initialize the database manager for MongoDB
 
         ###################
         # This is a lazy way to pull the api key and url and stuff, the api key will be stored safely in an environment variable, and the base urls will be stored in a config file. 
