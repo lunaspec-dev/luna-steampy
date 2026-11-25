@@ -80,11 +80,16 @@ class ISteamUser(SteamAPIHandler):
             result = self._get_user_friend_list_from_response(friend_list)
 
         if sort_by:
+            friend_sort_mapping = {
+                "username": lambda x: x.get("username", ""),
+                "relationship": lambda x: x.get("relationship", ""),
+                "friend_since": lambda x: x.get("friend_since", "")
+            }
             if group_by_relationship:
                 for relationship, data in result.items():
-                    data["friends"] = sorted(data["friends"], key=lambda x: x.get(sort_by))
+                    data["friends"] = self._sort_list(data["friends"], sort_by, friend_sort_mapping)
             else:
-                result = sorted(result, key=lambda x: x.get(sort_by))
+                result = self._sort_list(result, sort_by, friend_sort_mapping)
 
         return result
 

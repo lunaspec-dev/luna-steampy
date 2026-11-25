@@ -100,6 +100,26 @@ class SteamAPIHandler:
             return datetime.fromtimestamp(timestamp).strftime(format)
         return 0
     
+    def _sort_list(self, items: list, sort_by: str, key_mapping: dict) -> list:
+        """Sort a list of items by a specified key using lambda accessors.
+        
+        Args:
+            items (list): List of dicts or objects to sort
+            sort_by (str): Key name to sort by (must exist in key_mapping)
+            key_mapping (dict): Mapping of sort keys to lambda functions that extract the sort value
+                               Example: {"name": lambda x: x["name"], "time": lambda x: x["meta"]["time"]}
+        
+        Returns:
+            list: Sorted list, or original list if sort_by not in key_mapping
+        """
+        if sort_by and sort_by in key_mapping:
+            try:
+                return sorted(items, key=key_mapping[sort_by])
+            except (KeyError, TypeError) as e:
+                # If sort fails, return unsorted list
+                return items
+        return items
+    
     def _check_response(self, status_code: int, response: dict) -> dict:
         """Check and handle HTTP response based on status code.
         

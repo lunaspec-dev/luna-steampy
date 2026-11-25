@@ -299,13 +299,22 @@ class GameStatManager(SteamAPIHandler):
                 return_dict["split_achievements"] = formatted
 
             # add sorting logic if specified
-            available_sort_keys = {"display_name", "unlock_time"}
-            if sort_by in available_sort_keys:
+            achievement_sort_mapping = {
+                "display_name": lambda x: x["display_name"],
+                "unlock_time": lambda x: x["status"].get("unlock_time", 0)
+            }
+            if sort_by:
                 if differentiate_locked:
-                    return_dict["split_achievements"]["achieved"].sort(key=lambda x: x["status"].get(sort_by, 0))
-                    return_dict["split_achievements"]["locked"].sort(key=lambda x: x["status"].get(sort_by, 0))
+                    return_dict["split_achievements"]["achieved"] = self._sort_list(
+                        return_dict["split_achievements"]["achieved"], sort_by, achievement_sort_mapping
+                    )
+                    return_dict["split_achievements"]["locked"] = self._sort_list(
+                        return_dict["split_achievements"]["locked"], sort_by, achievement_sort_mapping
+                    )
                 else:
-                    return_dict["split_achievements"].sort(key=lambda x: x["status"].get(sort_by, 0))
+                    return_dict["split_achievements"] = self._sort_list(
+                        return_dict["split_achievements"], sort_by, achievement_sort_mapping
+                    )
 
         return return_dict
 
