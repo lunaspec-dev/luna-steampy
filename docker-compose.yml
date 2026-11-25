@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # MongoDB database service
+  mongodb:
+    image: mongo:latest
+    container_name: luna-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: steam_api_data
+    healthcheck:
+      test: mongosh --eval 'db.adminCommand("ping")'
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  # Luna-Steampy application service
+  luna-steampy:
+    build: .
+    container_name: luna-steampy
+    env_file:
+    - ./auth/.env
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    volumes:
+      - ./program:/app
+      - ./auth/.env:/app/.env:ro
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/steam_api_data
+      PYTHONUNBUFFERED: 1
+    networks:
+      - luna-network
+
+volumes:
+  mongo_data:
+
+networks:
+  luna-network:
+    driver: bridge
