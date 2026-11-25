@@ -94,11 +94,11 @@ class SteamAPIHandler:
             format (str): strftime format string. Defaults to '%Y-%m-%d %H:%M:%S'
             
         Returns:
-            str: Formatted datetime string, or empty string if timestamp is 0 or missing
+            str: Formatted datetime string, or 0 if timestamp is 0 or missing
         """
         if timestamp:
             return datetime.fromtimestamp(timestamp).strftime(format)
-        return ""
+        return 0
     
     def _check_response(self, status_code: int, response: dict) -> dict:
         """Check and handle HTTP response based on status code.
