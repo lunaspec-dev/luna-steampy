@@ -79,9 +79,11 @@ class TestUserStats(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid)
-        self.assertIsNotNone(result)
-        self.assertIn("split_achievements", result)
+
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid)
+            self.assertIsNotNone(result)
+            self.assertIn("split_achievements", result)
 
 
 class TestAchievements(unittest.TestCase):
@@ -97,12 +99,20 @@ class TestAchievements(unittest.TestCase):
         pass
 
     def test_get_player_achievements(self) -> None:
-        """Test getting player achievements from live API."""
+        """Test getting player achievements (mocked)."""
         steamid = PERSONAL_STEAM_ID
+        mock_response = {
+            "playerstats": {
+                "gameName": "Test Game",
+                "achievements": [{"apiname": "ACH_1", "achieved": 1, "unlocktime": 1700000000}]
+            }
+        }
         
-        result = self.stats_api.fetch_user_achievements(steamid, self.appid)
-        self.assertIsNotNone(result)
-        self.assertIn("playerstats", result)
+        with patch.object(self.stats_api, 'fetch_user_achievements', return_value=mock_response):
+            with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+                result = self.stats_api.fetch_user_achievements(steamid, self.appid)
+                self.assertIsNotNone(result)
+                self.assertIn("playerstats", result)
 
     def test_fetch_achievements_from_valid_response(self) -> None:
         """Test extraction of achievements from valid response."""
@@ -205,12 +215,13 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid)
-        achieved = result["split_achievements"]["achieved"]
-        
-        self.assertIsInstance(achieved[0]["status"]["unlock_time_human"], str)
-        self.assertIn("-", achieved[0]["status"]["unlock_time_human"])
-        self.assertIn(":", achieved[0]["status"]["unlock_time_human"])
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid)
+            achieved = result["split_achievements"]["achieved"]
+            
+            self.assertIsInstance(achieved[0]["status"]["unlock_time_human"], str)
+            self.assertIn("-", achieved[0]["status"]["unlock_time_human"])
+            self.assertIn(":", achieved[0]["status"]["unlock_time_human"])
 
     def test_locked_achievements_have_zero_timestamp(self) -> None:
         """Test that locked achievements have 0 for unlock_time_human."""
@@ -223,9 +234,10 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid)
-        locked = result["split_achievements"]["locked"]
-        self.assertEqual(locked[0]["status"]["unlock_time_human"], 0)
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid)
+            locked = result["split_achievements"]["locked"]
+            self.assertEqual(locked[0]["status"]["unlock_time_human"], 0)
 
     def test_format_includes_counts(self) -> None:
         """Test that format includes achieved/locked counts."""
@@ -240,9 +252,10 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid)
-        self.assertEqual(result["achieved_count"], 2)
-        self.assertEqual(result["locked_count"], 1)
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid)
+            self.assertEqual(result["achieved_count"], 2)
+            self.assertEqual(result["locked_count"], 1)
 
     def test_differentiate_locked_true_returns_dict(self) -> None:
         """Test that differentiate_locked=True returns dict split."""
@@ -256,10 +269,11 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=True)
-        self.assertIsInstance(result["split_achievements"], dict)
-        self.assertIn("achieved", result["split_achievements"])
-        self.assertIn("locked", result["split_achievements"])
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=True)
+            self.assertIsInstance(result["split_achievements"], dict)
+            self.assertIn("achieved", result["split_achievements"])
+            self.assertIn("locked", result["split_achievements"])
 
     def test_differentiate_locked_false_returns_flat_list(self) -> None:
         """Test that differentiate_locked=False returns flat list."""
@@ -274,9 +288,10 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=False)
-        self.assertIsInstance(result["split_achievements"], list)
-        self.assertEqual(len(result["split_achievements"]), 3)
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=False)
+            self.assertIsInstance(result["split_achievements"], list)
+            self.assertEqual(len(result["split_achievements"]), 3)
 
     def test_sort_by_name_alphabetical(self) -> None:
         """Test sorting by achievement display_name."""
@@ -291,9 +306,10 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=True, sort_by="display_name")
-        achieved = result["split_achievements"]["achieved"]
-        self.assertEqual(len(achieved), 3)
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=True, sort_by="display_name")
+            achieved = result["split_achievements"]["achieved"]
+            self.assertEqual(len(achieved), 3)
 
     def test_sort_by_unlock_time_chronological(self) -> None:
         """Test sorting by unlock time."""
@@ -308,9 +324,10 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=True, sort_by="unlock_time")
-        achieved_times = [a["status"]["unlock_time"] for a in result["split_achievements"]["achieved"]]
-        self.assertEqual(achieved_times, [1700000000, 1700100000, 1700200000])
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=True, sort_by="unlock_time")
+            achieved_times = [a["status"]["unlock_time"] for a in result["split_achievements"]["achieved"]]
+            self.assertEqual(achieved_times, [1700000000, 1700100000, 1700200000])
 
     def test_empty_achievements_list(self) -> None:
         """Test formatting with no achievements."""
@@ -321,9 +338,10 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid)
-        self.assertEqual(result["achieved_count"], 0)
-        self.assertEqual(result["locked_count"], 0)
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid)
+            self.assertEqual(result["achieved_count"], 0)
+            self.assertEqual(result["locked_count"], 0)
 
     def test_game_name_extraction(self) -> None:
         """Test that game name is correctly extracted."""
@@ -334,8 +352,9 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid)
-        self.assertEqual(result["game_name"], "Half-Life 3")
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid)
+            self.assertEqual(result["game_name"], "Half-Life 3")
 
     def test_return_raw_true_includes_response(self) -> None:
         """Test that return_raw=True includes full raw_response."""
@@ -348,9 +367,10 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid, return_raw=True)
-        self.assertIsNotNone(result["raw_response"])
-        self.assertEqual(result["raw_response"], response)
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid, return_raw=True)
+            self.assertIsNotNone(result["raw_response"])
+            self.assertEqual(result["raw_response"], response)
 
     def test_return_raw_false_omits_response(self) -> None:
         """Test that return_raw=False omits raw_response."""
@@ -363,8 +383,9 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid, return_raw=False)
-        self.assertIsNone(result["raw_response"])
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid, return_raw=False)
+            self.assertIsNone(result["raw_response"])
 
     def test_sort_flat_list(self) -> None:
         """Test sorting on flat list (differentiate_locked=False)."""
@@ -379,9 +400,10 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=False, sort_by="display_name")
-        achievements = result["split_achievements"]
-        self.assertEqual(len(achievements), 3)
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=False, sort_by="display_name")
+            achievements = result["split_achievements"]
+            self.assertEqual(len(achievements), 3)
 
     def test_invalid_sort_key_ignored(self) -> None:
         """Test that invalid sort keys are ignored without raising error."""
@@ -396,8 +418,9 @@ class TestAchievements(unittest.TestCase):
             }
         }
         
-        result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=True, sort_by="invalid_key")
-        self.assertEqual(len(result["split_achievements"]["achieved"]), 3)
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            result = self.stats_api.format_user_achievement_stats(response, self.appid, differentiate_locked=True, sort_by="invalid_key")
+            self.assertEqual(len(result["split_achievements"]["achieved"]), 3)
 
 
 class TestAPIReturnReusePatterns(unittest.TestCase):
@@ -443,8 +466,9 @@ class TestAPIReturnReusePatterns(unittest.TestCase):
         
         # Pattern 2: Fetch once, format multiple ways (no re-fetch)
         start = time.time()
-        for sort_by in ["display_name", "unlock_time", None]:
-            self.stats_api.format_user_achievement_stats(response, self.appid, sort_by=sort_by)
+        with patch.object(self.stats_api.game_schema_manager, 'fetch_schema_for_game', return_value={"game": {}}):
+            for sort_by in ["display_name", "unlock_time", None]:
+                self.stats_api.format_user_achievement_stats(response, self.appid, sort_by=sort_by)
         reuse_data_time = time.time() - start
         
         # Print results for visibility
