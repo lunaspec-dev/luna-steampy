@@ -1,0 +1,1403 @@
+{
+    "raw_response": {
+        "playerstats": {
+            "steamID": "76561198141974862",
+            "gameName": "BioShock Remastered",
+            "achievements": [
+                {
+                    "apiname": "ACHIEVEMENT_7",
+                    "achieved": 1,
+                    "unlocktime": 1733081745
+                },
+                {
+                    "apiname": "ACHIEVEMENT_20",
+                    "achieved": 1,
+                    "unlocktime": 1775969462
+                },
+                {
+                    "apiname": "ACHIEVEMENT_22",
+                    "achieved": 1,
+                    "unlocktime": 1776041083
+                },
+                {
+                    "apiname": "ACHIEVEMENT_55",
+                    "achieved": 1,
+                    "unlocktime": 1787358240
+                },
+                {
+                    "apiname": "ACHIEVEMENT_24",
+                    "achieved": 1,
+                    "unlocktime": 1783401841
+                },
+                {
+                    "apiname": "ACHIEVEMENT_26",
+                    "achieved": 1,
+                    "unlocktime": 1783998766
+                },
+                {
+                    "apiname": "ACHIEVEMENT_28",
+                    "achieved": 1,
+                    "unlocktime": 1787313047
+                },
+                {
+                    "apiname": "ACHIEVEMENT_103",
+                    "achieved": 1,
+                    "unlocktime": 1787310307
+                },
+                {
+                    "apiname": "ACHIEVEMENT_97",
+                    "achieved": 1,
+                    "unlocktime": 1776041083
+                },
+                {
+                    "apiname": "ACHIEVEMENT_111",
+                    "achieved": 1,
+                    "unlocktime": 1787303833
+                },
+                {
+                    "apiname": "ACHIEVEMENT_114",
+                    "achieved": 1,
+                    "unlocktime": 1783405932
+                },
+                {
+                    "apiname": "ACHIEVEMENT_118",
+                    "achieved": 1,
+                    "unlocktime": 1733081798
+                },
+                {
+                    "apiname": "ACHIEVEMENT_104",
+                    "achieved": 1,
+                    "unlocktime": 1783393310
+                },
+                {
+                    "apiname": "ACHIEVEMENT_106",
+                    "achieved": 1,
+                    "unlocktime": 1783991300
+                },
+                {
+                    "apiname": "ACHIEVEMENT_107",
+                    "achieved": 0,
+                    "unlocktime": 0
+                },
+                {
+                    "apiname": "ACHIEVEMENT_105",
+                    "achieved": 1,
+                    "unlocktime": 1783392374
+                },
+                {
+                    "apiname": "ACHIEVEMENT_108",
+                    "achieved": 0,
+                    "unlocktime": 0
+                },
+                {
+                    "apiname": "ACHIEVEMENT_110",
+                    "achieved": 1,
+                    "unlocktime": 1787319241
+                },
+                {
+                    "apiname": "ACHIEVEMENT_113",
+                    "achieved": 1,
+                    "unlocktime": 1783994336
+                },
+                {
+                    "apiname": "ACHIEVEMENT_116",
+                    "achieved": 1,
+                    "unlocktime": 1775976054
+                },
+                {
+                    "apiname": "ACHIEVEMENT_119",
+                    "achieved": 1,
+                    "unlocktime": 1733081798
+                },
+                {
+                    "apiname": "ACHIEVEMENT_121",
+                    "achieved": 1,
+                    "unlocktime": 1775964890
+                },
+                {
+                    "apiname": "ACHIEVEMENT_120",
+                    "achieved": 1,
+                    "unlocktime": 1775965770
+                },
+                {
+                    "apiname": "ACHIEVEMENT_122",
+                    "achieved": 1,
+                    "unlocktime": 1733081990
+                },
+                {
+                    "apiname": "ACHIEVEMENT_123",
+                    "achieved": 1,
+                    "unlocktime": 1775967585
+                },
+                {
+                    "apiname": "ACHIEVEMENT_129",
+                    "achieved": 1,
+                    "unlocktime": 1783407890
+                },
+                {
+                    "apiname": "ACHIEVEMENT_133",
+                    "achieved": 1,
+                    "unlocktime": 1787358274
+                },
+                {
+                    "apiname": "ACHIEVEMENT_125",
+                    "achieved": 1,
+                    "unlocktime": 1776043502
+                },
+                {
+                    "apiname": "ACHIEVEMENT_30",
+                    "achieved": 1,
+                    "unlocktime": 1787320192
+                },
+                {
+                    "apiname": "ACHIEVEMENT_96",
+                    "achieved": 1,
+                    "unlocktime": 1776033070
+                },
+                {
+                    "apiname": "ACHIEVEMENT_117",
+                    "achieved": 1,
+                    "unlocktime": 1775975596
+                },
+                {
+                    "apiname": "ACHIEVEMENT_134",
+                    "achieved": 1,
+                    "unlocktime": 1787355646
+                },
+                {
+                    "apiname": "ACHIEVEMENT_72",
+                    "achieved": 1,
+                    "unlocktime": 1787301179
+                },
+                {
+                    "apiname": "ACHIEVEMENT_94",
+                    "achieved": 1,
+                    "unlocktime": 1787351592
+                },
+                {
+                    "apiname": "ACHIEVEMENT_98",
+                    "achieved": 1,
+                    "unlocktime": 1787305628
+                },
+                {
+                    "apiname": "ACHIEVEMENT_99",
+                    "achieved": 1,
+                    "unlocktime": 1787308057
+                },
+                {
+                    "apiname": "ACHIEVEMENT_100",
+                    "achieved": 1,
+                    "unlocktime": 1787310259
+                },
+                {
+                    "apiname": "ACHIEVEMENT_101",
+                    "achieved": 1,
+                    "unlocktime": 1787310275
+                },
+                {
+                    "apiname": "ACHIEVEMENT_102",
+                    "achieved": 1,
+                    "unlocktime": 1787310293
+                },
+                {
+                    "apiname": "ACHIEVEMENT_135",
+                    "achieved": 1,
+                    "unlocktime": 1787355812
+                },
+                {
+                    "apiname": "ACHIEVEMENT_136",
+                    "achieved": 1,
+                    "unlocktime": 1783402165
+                },
+                {
+                    "apiname": "ACHIEVEMENT_137",
+                    "achieved": 1,
+                    "unlocktime": 1787347697
+                },
+                {
+                    "apiname": "ACHIEVEMENT_138",
+                    "achieved": 1,
+                    "unlocktime": 1787317961
+                },
+                {
+                    "apiname": "ACHIEVEMENT_139",
+                    "achieved": 1,
+                    "unlocktime": 1733081164
+                },
+                {
+                    "apiname": "ACHIEVEMENT_132",
+                    "achieved": 0,
+                    "unlocktime": 0
+                },
+                {
+                    "apiname": "ACHIEVEMENT_124",
+                    "achieved": 1,
+                    "unlocktime": 1775978172
+                },
+                {
+                    "apiname": "ACHIEVEMENT_130",
+                    "achieved": 1,
+                    "unlocktime": 1787358274
+                },
+                {
+                    "apiname": "ACHIEVEMENT_128",
+                    "achieved": 1,
+                    "unlocktime": 1787347897
+                },
+                {
+                    "apiname": "ACHIEVEMENT_131",
+                    "achieved": 1,
+                    "unlocktime": 1787304750
+                },
+                {
+                    "apiname": "ACHIEVEMENT_115",
+                    "achieved": 0,
+                    "unlocktime": 0
+                },
+                {
+                    "apiname": "ACHIEVEMENT_141",
+                    "achieved": 1,
+                    "unlocktime": 1787358274
+                },
+                {
+                    "apiname": "ACHIEVEMENT_142",
+                    "achieved": 1,
+                    "unlocktime": 1787358274
+                },
+                {
+                    "apiname": "ACHIEVEMENT_143",
+                    "achieved": 1,
+                    "unlocktime": 1787359720
+                },
+                {
+                    "apiname": "ACHIEVEMENT_144",
+                    "achieved": 1,
+                    "unlocktime": 1787359720
+                },
+                {
+                    "apiname": "ACHIEVEMENT_145",
+                    "achieved": 1,
+                    "unlocktime": 1787360165
+                },
+                {
+                    "apiname": "ACHIEVEMENT_146",
+                    "achieved": 1,
+                    "unlocktime": 1787362002
+                },
+                {
+                    "apiname": "ACHIEVEMENT_147",
+                    "achieved": 1,
+                    "unlocktime": 1787365244
+                },
+                {
+                    "apiname": "ACHIEVEMENT_148",
+                    "achieved": 1,
+                    "unlocktime": 1787366092
+                },
+                {
+                    "apiname": "ACHIEVEMENT_149",
+                    "achieved": 1,
+                    "unlocktime": 1787741108
+                },
+                {
+                    "apiname": "ACHIEVEMENT_150",
+                    "achieved": 1,
+                    "unlocktime": 1787740530
+                },
+                {
+                    "apiname": "ACHIEVEMENT_151",
+                    "achieved": 0,
+                    "unlocktime": 0
+                },
+                {
+                    "apiname": "ACHIEVEMENT_152",
+                    "achieved": 0,
+                    "unlocktime": 0
+                },
+                {
+                    "apiname": "ACHIEVEMENT_153",
+                    "achieved": 0,
+                    "unlocktime": 0
+                },
+                {
+                    "apiname": "ACHIEVEMENT_154",
+                    "achieved": 0,
+                    "unlocktime": 0
+                },
+                {
+                    "apiname": "ACHIEVEMENT_200",
+                    "achieved": 1,
+                    "unlocktime": 1787358274
+                }
+            ],
+            "success": true
+        }
+    },
+    "fetched": {
+        "game_name": "BioShock Remastered",
+        "achievements": [
+            {
+                "apiname": "ACHIEVEMENT_7",
+                "achieved": 1,
+                "unlocktime": 1733081745
+            },
+            {
+                "apiname": "ACHIEVEMENT_20",
+                "achieved": 1,
+                "unlocktime": 1775969462
+            },
+            {
+                "apiname": "ACHIEVEMENT_22",
+                "achieved": 1,
+                "unlocktime": 1776041083
+            },
+            {
+                "apiname": "ACHIEVEMENT_55",
+                "achieved": 1,
+                "unlocktime": 1787358240
+            },
+            {
+                "apiname": "ACHIEVEMENT_24",
+                "achieved": 1,
+                "unlocktime": 1783401841
+            },
+            {
+                "apiname": "ACHIEVEMENT_26",
+                "achieved": 1,
+                "unlocktime": 1783998766
+            },
+            {
+                "apiname": "ACHIEVEMENT_28",
+                "achieved": 1,
+                "unlocktime": 1787313047
+            },
+            {
+                "apiname": "ACHIEVEMENT_103",
+                "achieved": 1,
+                "unlocktime": 1787310307
+            },
+            {
+                "apiname": "ACHIEVEMENT_97",
+                "achieved": 1,
+                "unlocktime": 1776041083
+            },
+            {
+                "apiname": "ACHIEVEMENT_111",
+                "achieved": 1,
+                "unlocktime": 1787303833
+            },
+            {
+                "apiname": "ACHIEVEMENT_114",
+                "achieved": 1,
+                "unlocktime": 1783405932
+            },
+            {
+                "apiname": "ACHIEVEMENT_118",
+                "achieved": 1,
+                "unlocktime": 1733081798
+            },
+            {
+                "apiname": "ACHIEVEMENT_104",
+                "achieved": 1,
+                "unlocktime": 1783393310
+            },
+            {
+                "apiname": "ACHIEVEMENT_106",
+                "achieved": 1,
+                "unlocktime": 1783991300
+            },
+            {
+                "apiname": "ACHIEVEMENT_107",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_105",
+                "achieved": 1,
+                "unlocktime": 1783392374
+            },
+            {
+                "apiname": "ACHIEVEMENT_108",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_110",
+                "achieved": 1,
+                "unlocktime": 1787319241
+            },
+            {
+                "apiname": "ACHIEVEMENT_113",
+                "achieved": 1,
+                "unlocktime": 1783994336
+            },
+            {
+                "apiname": "ACHIEVEMENT_116",
+                "achieved": 1,
+                "unlocktime": 1775976054
+            },
+            {
+                "apiname": "ACHIEVEMENT_119",
+                "achieved": 1,
+                "unlocktime": 1733081798
+            },
+            {
+                "apiname": "ACHIEVEMENT_121",
+                "achieved": 1,
+                "unlocktime": 1775964890
+            },
+            {
+                "apiname": "ACHIEVEMENT_120",
+                "achieved": 1,
+                "unlocktime": 1775965770
+            },
+            {
+                "apiname": "ACHIEVEMENT_122",
+                "achieved": 1,
+                "unlocktime": 1733081990
+            },
+            {
+                "apiname": "ACHIEVEMENT_123",
+                "achieved": 1,
+                "unlocktime": 1775967585
+            },
+            {
+                "apiname": "ACHIEVEMENT_129",
+                "achieved": 1,
+                "unlocktime": 1783407890
+            },
+            {
+                "apiname": "ACHIEVEMENT_133",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            },
+            {
+                "apiname": "ACHIEVEMENT_125",
+                "achieved": 1,
+                "unlocktime": 1776043502
+            },
+            {
+                "apiname": "ACHIEVEMENT_30",
+                "achieved": 1,
+                "unlocktime": 1787320192
+            },
+            {
+                "apiname": "ACHIEVEMENT_96",
+                "achieved": 1,
+                "unlocktime": 1776033070
+            },
+            {
+                "apiname": "ACHIEVEMENT_117",
+                "achieved": 1,
+                "unlocktime": 1775975596
+            },
+            {
+                "apiname": "ACHIEVEMENT_134",
+                "achieved": 1,
+                "unlocktime": 1787355646
+            },
+            {
+                "apiname": "ACHIEVEMENT_72",
+                "achieved": 1,
+                "unlocktime": 1787301179
+            },
+            {
+                "apiname": "ACHIEVEMENT_94",
+                "achieved": 1,
+                "unlocktime": 1787351592
+            },
+            {
+                "apiname": "ACHIEVEMENT_98",
+                "achieved": 1,
+                "unlocktime": 1787305628
+            },
+            {
+                "apiname": "ACHIEVEMENT_99",
+                "achieved": 1,
+                "unlocktime": 1787308057
+            },
+            {
+                "apiname": "ACHIEVEMENT_100",
+                "achieved": 1,
+                "unlocktime": 1787310259
+            },
+            {
+                "apiname": "ACHIEVEMENT_101",
+                "achieved": 1,
+                "unlocktime": 1787310275
+            },
+            {
+                "apiname": "ACHIEVEMENT_102",
+                "achieved": 1,
+                "unlocktime": 1787310293
+            },
+            {
+                "apiname": "ACHIEVEMENT_135",
+                "achieved": 1,
+                "unlocktime": 1787355812
+            },
+            {
+                "apiname": "ACHIEVEMENT_136",
+                "achieved": 1,
+                "unlocktime": 1783402165
+            },
+            {
+                "apiname": "ACHIEVEMENT_137",
+                "achieved": 1,
+                "unlocktime": 1787347697
+            },
+            {
+                "apiname": "ACHIEVEMENT_138",
+                "achieved": 1,
+                "unlocktime": 1787317961
+            },
+            {
+                "apiname": "ACHIEVEMENT_139",
+                "achieved": 1,
+                "unlocktime": 1733081164
+            },
+            {
+                "apiname": "ACHIEVEMENT_132",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_124",
+                "achieved": 1,
+                "unlocktime": 1775978172
+            },
+            {
+                "apiname": "ACHIEVEMENT_130",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            },
+            {
+                "apiname": "ACHIEVEMENT_128",
+                "achieved": 1,
+                "unlocktime": 1787347897
+            },
+            {
+                "apiname": "ACHIEVEMENT_131",
+                "achieved": 1,
+                "unlocktime": 1787304750
+            },
+            {
+                "apiname": "ACHIEVEMENT_115",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_141",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            },
+            {
+                "apiname": "ACHIEVEMENT_142",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            },
+            {
+                "apiname": "ACHIEVEMENT_143",
+                "achieved": 1,
+                "unlocktime": 1787359720
+            },
+            {
+                "apiname": "ACHIEVEMENT_144",
+                "achieved": 1,
+                "unlocktime": 1787359720
+            },
+            {
+                "apiname": "ACHIEVEMENT_145",
+                "achieved": 1,
+                "unlocktime": 1787360165
+            },
+            {
+                "apiname": "ACHIEVEMENT_146",
+                "achieved": 1,
+                "unlocktime": 1787362002
+            },
+            {
+                "apiname": "ACHIEVEMENT_147",
+                "achieved": 1,
+                "unlocktime": 1787365244
+            },
+            {
+                "apiname": "ACHIEVEMENT_148",
+                "achieved": 1,
+                "unlocktime": 1787366092
+            },
+            {
+                "apiname": "ACHIEVEMENT_149",
+                "achieved": 1,
+                "unlocktime": 1787741108
+            },
+            {
+                "apiname": "ACHIEVEMENT_150",
+                "achieved": 1,
+                "unlocktime": 1787740530
+            },
+            {
+                "apiname": "ACHIEVEMENT_151",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_152",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_153",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_154",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_200",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            }
+        ],
+        "achievement_count": 65
+    },
+    "categorized": {
+        "game_name": "BioShock Remastered",
+        "achieved": [
+            {
+                "apiname": "ACHIEVEMENT_7",
+                "achieved": 1,
+                "unlocktime": 1733081745
+            },
+            {
+                "apiname": "ACHIEVEMENT_20",
+                "achieved": 1,
+                "unlocktime": 1775969462
+            },
+            {
+                "apiname": "ACHIEVEMENT_22",
+                "achieved": 1,
+                "unlocktime": 1776041083
+            },
+            {
+                "apiname": "ACHIEVEMENT_55",
+                "achieved": 1,
+                "unlocktime": 1787358240
+            },
+            {
+                "apiname": "ACHIEVEMENT_24",
+                "achieved": 1,
+                "unlocktime": 1783401841
+            },
+            {
+                "apiname": "ACHIEVEMENT_26",
+                "achieved": 1,
+                "unlocktime": 1783998766
+            },
+            {
+                "apiname": "ACHIEVEMENT_28",
+                "achieved": 1,
+                "unlocktime": 1787313047
+            },
+            {
+                "apiname": "ACHIEVEMENT_103",
+                "achieved": 1,
+                "unlocktime": 1787310307
+            },
+            {
+                "apiname": "ACHIEVEMENT_97",
+                "achieved": 1,
+                "unlocktime": 1776041083
+            },
+            {
+                "apiname": "ACHIEVEMENT_111",
+                "achieved": 1,
+                "unlocktime": 1787303833
+            },
+            {
+                "apiname": "ACHIEVEMENT_114",
+                "achieved": 1,
+                "unlocktime": 1783405932
+            },
+            {
+                "apiname": "ACHIEVEMENT_118",
+                "achieved": 1,
+                "unlocktime": 1733081798
+            },
+            {
+                "apiname": "ACHIEVEMENT_104",
+                "achieved": 1,
+                "unlocktime": 1783393310
+            },
+            {
+                "apiname": "ACHIEVEMENT_106",
+                "achieved": 1,
+                "unlocktime": 1783991300
+            },
+            {
+                "apiname": "ACHIEVEMENT_105",
+                "achieved": 1,
+                "unlocktime": 1783392374
+            },
+            {
+                "apiname": "ACHIEVEMENT_110",
+                "achieved": 1,
+                "unlocktime": 1787319241
+            },
+            {
+                "apiname": "ACHIEVEMENT_113",
+                "achieved": 1,
+                "unlocktime": 1783994336
+            },
+            {
+                "apiname": "ACHIEVEMENT_116",
+                "achieved": 1,
+                "unlocktime": 1775976054
+            },
+            {
+                "apiname": "ACHIEVEMENT_119",
+                "achieved": 1,
+                "unlocktime": 1733081798
+            },
+            {
+                "apiname": "ACHIEVEMENT_121",
+                "achieved": 1,
+                "unlocktime": 1775964890
+            },
+            {
+                "apiname": "ACHIEVEMENT_120",
+                "achieved": 1,
+                "unlocktime": 1775965770
+            },
+            {
+                "apiname": "ACHIEVEMENT_122",
+                "achieved": 1,
+                "unlocktime": 1733081990
+            },
+            {
+                "apiname": "ACHIEVEMENT_123",
+                "achieved": 1,
+                "unlocktime": 1775967585
+            },
+            {
+                "apiname": "ACHIEVEMENT_129",
+                "achieved": 1,
+                "unlocktime": 1783407890
+            },
+            {
+                "apiname": "ACHIEVEMENT_133",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            },
+            {
+                "apiname": "ACHIEVEMENT_125",
+                "achieved": 1,
+                "unlocktime": 1776043502
+            },
+            {
+                "apiname": "ACHIEVEMENT_30",
+                "achieved": 1,
+                "unlocktime": 1787320192
+            },
+            {
+                "apiname": "ACHIEVEMENT_96",
+                "achieved": 1,
+                "unlocktime": 1776033070
+            },
+            {
+                "apiname": "ACHIEVEMENT_117",
+                "achieved": 1,
+                "unlocktime": 1775975596
+            },
+            {
+                "apiname": "ACHIEVEMENT_134",
+                "achieved": 1,
+                "unlocktime": 1787355646
+            },
+            {
+                "apiname": "ACHIEVEMENT_72",
+                "achieved": 1,
+                "unlocktime": 1787301179
+            },
+            {
+                "apiname": "ACHIEVEMENT_94",
+                "achieved": 1,
+                "unlocktime": 1787351592
+            },
+            {
+                "apiname": "ACHIEVEMENT_98",
+                "achieved": 1,
+                "unlocktime": 1787305628
+            },
+            {
+                "apiname": "ACHIEVEMENT_99",
+                "achieved": 1,
+                "unlocktime": 1787308057
+            },
+            {
+                "apiname": "ACHIEVEMENT_100",
+                "achieved": 1,
+                "unlocktime": 1787310259
+            },
+            {
+                "apiname": "ACHIEVEMENT_101",
+                "achieved": 1,
+                "unlocktime": 1787310275
+            },
+            {
+                "apiname": "ACHIEVEMENT_102",
+                "achieved": 1,
+                "unlocktime": 1787310293
+            },
+            {
+                "apiname": "ACHIEVEMENT_135",
+                "achieved": 1,
+                "unlocktime": 1787355812
+            },
+            {
+                "apiname": "ACHIEVEMENT_136",
+                "achieved": 1,
+                "unlocktime": 1783402165
+            },
+            {
+                "apiname": "ACHIEVEMENT_137",
+                "achieved": 1,
+                "unlocktime": 1787347697
+            },
+            {
+                "apiname": "ACHIEVEMENT_138",
+                "achieved": 1,
+                "unlocktime": 1787317961
+            },
+            {
+                "apiname": "ACHIEVEMENT_139",
+                "achieved": 1,
+                "unlocktime": 1733081164
+            },
+            {
+                "apiname": "ACHIEVEMENT_124",
+                "achieved": 1,
+                "unlocktime": 1775978172
+            },
+            {
+                "apiname": "ACHIEVEMENT_130",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            },
+            {
+                "apiname": "ACHIEVEMENT_128",
+                "achieved": 1,
+                "unlocktime": 1787347897
+            },
+            {
+                "apiname": "ACHIEVEMENT_131",
+                "achieved": 1,
+                "unlocktime": 1787304750
+            },
+            {
+                "apiname": "ACHIEVEMENT_141",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            },
+            {
+                "apiname": "ACHIEVEMENT_142",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            },
+            {
+                "apiname": "ACHIEVEMENT_143",
+                "achieved": 1,
+                "unlocktime": 1787359720
+            },
+            {
+                "apiname": "ACHIEVEMENT_144",
+                "achieved": 1,
+                "unlocktime": 1787359720
+            },
+            {
+                "apiname": "ACHIEVEMENT_145",
+                "achieved": 1,
+                "unlocktime": 1787360165
+            },
+            {
+                "apiname": "ACHIEVEMENT_146",
+                "achieved": 1,
+                "unlocktime": 1787362002
+            },
+            {
+                "apiname": "ACHIEVEMENT_147",
+                "achieved": 1,
+                "unlocktime": 1787365244
+            },
+            {
+                "apiname": "ACHIEVEMENT_148",
+                "achieved": 1,
+                "unlocktime": 1787366092
+            },
+            {
+                "apiname": "ACHIEVEMENT_149",
+                "achieved": 1,
+                "unlocktime": 1787741108
+            },
+            {
+                "apiname": "ACHIEVEMENT_150",
+                "achieved": 1,
+                "unlocktime": 1787740530
+            },
+            {
+                "apiname": "ACHIEVEMENT_200",
+                "achieved": 1,
+                "unlocktime": 1787358274
+            }
+        ],
+        "locked": [
+            {
+                "apiname": "ACHIEVEMENT_107",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_108",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_132",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_115",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_151",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_152",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_153",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            {
+                "apiname": "ACHIEVEMENT_154",
+                "achieved": 0,
+                "unlocktime": 0
+            }
+        ],
+        "achieved_count": 57,
+        "locked_count": 8
+    },
+    "formatted": {
+        "game_name": "BioShock Remastered",
+        "raw_response": null,
+        "achieved_count": 57,
+        "locked_count": 8,
+        "split_achievements": {
+            "achieved": [
+                {
+                    "name": "ACHIEVEMENT_139",
+                    "achieved": 1,
+                    "unlock_time": 1733081164,
+                    "unlock_time_human": "2024-12-01 11:26:04"
+                },
+                {
+                    "name": "ACHIEVEMENT_7",
+                    "achieved": 1,
+                    "unlock_time": 1733081745,
+                    "unlock_time_human": "2024-12-01 11:35:45"
+                },
+                {
+                    "name": "ACHIEVEMENT_118",
+                    "achieved": 1,
+                    "unlock_time": 1733081798,
+                    "unlock_time_human": "2024-12-01 11:36:38"
+                },
+                {
+                    "name": "ACHIEVEMENT_119",
+                    "achieved": 1,
+                    "unlock_time": 1733081798,
+                    "unlock_time_human": "2024-12-01 11:36:38"
+                },
+                {
+                    "name": "ACHIEVEMENT_122",
+                    "achieved": 1,
+                    "unlock_time": 1733081990,
+                    "unlock_time_human": "2024-12-01 11:39:50"
+                },
+                {
+                    "name": "ACHIEVEMENT_121",
+                    "achieved": 1,
+                    "unlock_time": 1775964890,
+                    "unlock_time_human": "2026-04-11 20:34:50"
+                },
+                {
+                    "name": "ACHIEVEMENT_120",
+                    "achieved": 1,
+                    "unlock_time": 1775965770,
+                    "unlock_time_human": "2026-04-11 20:49:30"
+                },
+                {
+                    "name": "ACHIEVEMENT_123",
+                    "achieved": 1,
+                    "unlock_time": 1775967585,
+                    "unlock_time_human": "2026-04-11 21:19:45"
+                },
+                {
+                    "name": "ACHIEVEMENT_20",
+                    "achieved": 1,
+                    "unlock_time": 1775969462,
+                    "unlock_time_human": "2026-04-11 21:51:02"
+                },
+                {
+                    "name": "ACHIEVEMENT_117",
+                    "achieved": 1,
+                    "unlock_time": 1775975596,
+                    "unlock_time_human": "2026-04-11 23:33:16"
+                },
+                {
+                    "name": "ACHIEVEMENT_116",
+                    "achieved": 1,
+                    "unlock_time": 1775976054,
+                    "unlock_time_human": "2026-04-11 23:40:54"
+                },
+                {
+                    "name": "ACHIEVEMENT_124",
+                    "achieved": 1,
+                    "unlock_time": 1775978172,
+                    "unlock_time_human": "2026-04-12 00:16:12"
+                },
+                {
+                    "name": "ACHIEVEMENT_96",
+                    "achieved": 1,
+                    "unlock_time": 1776033070,
+                    "unlock_time_human": "2026-04-12 15:31:10"
+                },
+                {
+                    "name": "ACHIEVEMENT_22",
+                    "achieved": 1,
+                    "unlock_time": 1776041083,
+                    "unlock_time_human": "2026-04-12 17:44:43"
+                },
+                {
+                    "name": "ACHIEVEMENT_97",
+                    "achieved": 1,
+                    "unlock_time": 1776041083,
+                    "unlock_time_human": "2026-04-12 17:44:43"
+                },
+                {
+                    "name": "ACHIEVEMENT_125",
+                    "achieved": 1,
+                    "unlock_time": 1776043502,
+                    "unlock_time_human": "2026-04-12 18:25:02"
+                },
+                {
+                    "name": "ACHIEVEMENT_105",
+                    "achieved": 1,
+                    "unlock_time": 1783392374,
+                    "unlock_time_human": "2026-07-06 19:46:14"
+                },
+                {
+                    "name": "ACHIEVEMENT_104",
+                    "achieved": 1,
+                    "unlock_time": 1783393310,
+                    "unlock_time_human": "2026-07-06 20:01:50"
+                },
+                {
+                    "name": "ACHIEVEMENT_24",
+                    "achieved": 1,
+                    "unlock_time": 1783401841,
+                    "unlock_time_human": "2026-07-06 22:24:01"
+                },
+                {
+                    "name": "ACHIEVEMENT_136",
+                    "achieved": 1,
+                    "unlock_time": 1783402165,
+                    "unlock_time_human": "2026-07-06 22:29:25"
+                },
+                {
+                    "name": "ACHIEVEMENT_114",
+                    "achieved": 1,
+                    "unlock_time": 1783405932,
+                    "unlock_time_human": "2026-07-06 23:32:12"
+                },
+                {
+                    "name": "ACHIEVEMENT_129",
+                    "achieved": 1,
+                    "unlock_time": 1783407890,
+                    "unlock_time_human": "2026-07-07 00:04:50"
+                },
+                {
+                    "name": "ACHIEVEMENT_106",
+                    "achieved": 1,
+                    "unlock_time": 1783991300,
+                    "unlock_time_human": "2026-07-13 18:08:20"
+                },
+                {
+                    "name": "ACHIEVEMENT_113",
+                    "achieved": 1,
+                    "unlock_time": 1783994336,
+                    "unlock_time_human": "2026-07-13 18:58:56"
+                },
+                {
+                    "name": "ACHIEVEMENT_26",
+                    "achieved": 1,
+                    "unlock_time": 1783998766,
+                    "unlock_time_human": "2026-07-13 20:12:46"
+                },
+                {
+                    "name": "ACHIEVEMENT_72",
+                    "achieved": 1,
+                    "unlock_time": 1787301179,
+                    "unlock_time_human": "2026-08-21 01:32:59"
+                },
+                {
+                    "name": "ACHIEVEMENT_111",
+                    "achieved": 1,
+                    "unlock_time": 1787303833,
+                    "unlock_time_human": "2026-08-21 02:17:13"
+                },
+                {
+                    "name": "ACHIEVEMENT_131",
+                    "achieved": 1,
+                    "unlock_time": 1787304750,
+                    "unlock_time_human": "2026-08-21 02:32:30"
+                },
+                {
+                    "name": "ACHIEVEMENT_98",
+                    "achieved": 1,
+                    "unlock_time": 1787305628,
+                    "unlock_time_human": "2026-08-21 02:47:08"
+                },
+                {
+                    "name": "ACHIEVEMENT_99",
+                    "achieved": 1,
+                    "unlock_time": 1787308057,
+                    "unlock_time_human": "2026-08-21 03:27:37"
+                },
+                {
+                    "name": "ACHIEVEMENT_100",
+                    "achieved": 1,
+                    "unlock_time": 1787310259,
+                    "unlock_time_human": "2026-08-21 04:04:19"
+                },
+                {
+                    "name": "ACHIEVEMENT_101",
+                    "achieved": 1,
+                    "unlock_time": 1787310275,
+                    "unlock_time_human": "2026-08-21 04:04:35"
+                },
+                {
+                    "name": "ACHIEVEMENT_102",
+                    "achieved": 1,
+                    "unlock_time": 1787310293,
+                    "unlock_time_human": "2026-08-21 04:04:53"
+                },
+                {
+                    "name": "ACHIEVEMENT_103",
+                    "achieved": 1,
+                    "unlock_time": 1787310307,
+                    "unlock_time_human": "2026-08-21 04:05:07"
+                },
+                {
+                    "name": "ACHIEVEMENT_28",
+                    "achieved": 1,
+                    "unlock_time": 1787313047,
+                    "unlock_time_human": "2026-08-21 04:50:47"
+                },
+                {
+                    "name": "ACHIEVEMENT_138",
+                    "achieved": 1,
+                    "unlock_time": 1787317961,
+                    "unlock_time_human": "2026-08-21 06:12:41"
+                },
+                {
+                    "name": "ACHIEVEMENT_110",
+                    "achieved": 1,
+                    "unlock_time": 1787319241,
+                    "unlock_time_human": "2026-08-21 06:34:01"
+                },
+                {
+                    "name": "ACHIEVEMENT_30",
+                    "achieved": 1,
+                    "unlock_time": 1787320192,
+                    "unlock_time_human": "2026-08-21 06:49:52"
+                },
+                {
+                    "name": "ACHIEVEMENT_137",
+                    "achieved": 1,
+                    "unlock_time": 1787347697,
+                    "unlock_time_human": "2026-08-21 14:28:17"
+                },
+                {
+                    "name": "ACHIEVEMENT_128",
+                    "achieved": 1,
+                    "unlock_time": 1787347897,
+                    "unlock_time_human": "2026-08-21 14:31:37"
+                },
+                {
+                    "name": "ACHIEVEMENT_94",
+                    "achieved": 1,
+                    "unlock_time": 1787351592,
+                    "unlock_time_human": "2026-08-21 15:33:12"
+                },
+                {
+                    "name": "ACHIEVEMENT_134",
+                    "achieved": 1,
+                    "unlock_time": 1787355646,
+                    "unlock_time_human": "2026-08-21 16:40:46"
+                },
+                {
+                    "name": "ACHIEVEMENT_135",
+                    "achieved": 1,
+                    "unlock_time": 1787355812,
+                    "unlock_time_human": "2026-08-21 16:43:32"
+                },
+                {
+                    "name": "ACHIEVEMENT_55",
+                    "achieved": 1,
+                    "unlock_time": 1787358240,
+                    "unlock_time_human": "2026-08-21 17:24:00"
+                },
+                {
+                    "name": "ACHIEVEMENT_133",
+                    "achieved": 1,
+                    "unlock_time": 1787358274,
+                    "unlock_time_human": "2026-08-21 17:24:34"
+                },
+                {
+                    "name": "ACHIEVEMENT_130",
+                    "achieved": 1,
+                    "unlock_time": 1787358274,
+                    "unlock_time_human": "2026-08-21 17:24:34"
+                },
+                {
+                    "name": "ACHIEVEMENT_141",
+                    "achieved": 1,
+                    "unlock_time": 1787358274,
+                    "unlock_time_human": "2026-08-21 17:24:34"
+                },
+                {
+                    "name": "ACHIEVEMENT_142",
+                    "achieved": 1,
+                    "unlock_time": 1787358274,
+                    "unlock_time_human": "2026-08-21 17:24:34"
+                },
+                {
+                    "name": "ACHIEVEMENT_200",
+                    "achieved": 1,
+                    "unlock_time": 1787358274,
+                    "unlock_time_human": "2026-08-21 17:24:34"
+                },
+                {
+                    "name": "ACHIEVEMENT_143",
+                    "achieved": 1,
+                    "unlock_time": 1787359720,
+                    "unlock_time_human": "2026-08-21 17:48:40"
+                },
+                {
+                    "name": "ACHIEVEMENT_144",
+                    "achieved": 1,
+                    "unlock_time": 1787359720,
+                    "unlock_time_human": "2026-08-21 17:48:40"
+                },
+                {
+                    "name": "ACHIEVEMENT_145",
+                    "achieved": 1,
+                    "unlock_time": 1787360165,
+                    "unlock_time_human": "2026-08-21 17:56:05"
+                },
+                {
+                    "name": "ACHIEVEMENT_146",
+                    "achieved": 1,
+                    "unlock_time": 1787362002,
+                    "unlock_time_human": "2026-08-21 18:26:42"
+                },
+                {
+                    "name": "ACHIEVEMENT_147",
+                    "achieved": 1,
+                    "unlock_time": 1787365244,
+                    "unlock_time_human": "2026-08-21 19:20:44"
+                },
+                {
+                    "name": "ACHIEVEMENT_148",
+                    "achieved": 1,
+                    "unlock_time": 1787366092,
+                    "unlock_time_human": "2026-08-21 19:34:52"
+                },
+                {
+                    "name": "ACHIEVEMENT_150",
+                    "achieved": 1,
+                    "unlock_time": 1787740530,
+                    "unlock_time_human": "2026-08-26 03:35:30"
+                },
+                {
+                    "name": "ACHIEVEMENT_149",
+                    "achieved": 1,
+                    "unlock_time": 1787741108,
+                    "unlock_time_human": "2026-08-26 03:45:08"
+                }
+            ],
+            "locked": [
+                {
+                    "name": "ACHIEVEMENT_107",
+                    "achieved": 0,
+                    "unlock_time": 0,
+                    "unlock_time_human": 0
+                },
+                {
+                    "name": "ACHIEVEMENT_108",
+                    "achieved": 0,
+                    "unlock_time": 0,
+                    "unlock_time_human": 0
+                },
+                {
+                    "name": "ACHIEVEMENT_132",
+                    "achieved": 0,
+                    "unlock_time": 0,
+                    "unlock_time_human": 0
+                },
+                {
+                    "name": "ACHIEVEMENT_115",
+                    "achieved": 0,
+                    "unlock_time": 0,
+                    "unlock_time_human": 0
+                },
+                {
+                    "name": "ACHIEVEMENT_151",
+                    "achieved": 0,
+                    "unlock_time": 0,
+                    "unlock_time_human": 0
+                },
+                {
+                    "name": "ACHIEVEMENT_152",
+                    "achieved": 0,
+                    "unlock_time": 0,
+                    "unlock_time_human": 0
+                },
+                {
+                    "name": "ACHIEVEMENT_153",
+                    "achieved": 0,
+                    "unlock_time": 0,
+                    "unlock_time_human": 0
+                },
+                {
+                    "name": "ACHIEVEMENT_154",
+                    "achieved": 0,
+                    "unlock_time": 0,
+                    "unlock_time_human": 0
+                }
+            ]
+        }
+    }
+}

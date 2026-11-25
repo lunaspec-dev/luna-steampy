@@ -1,0 +1,167 @@
+{
+  "public": [
+    {
+      "interface": "ISteamUser",
+      "description": "Used to access information and interact with users.",
+      "methods": {
+        "GetFriendList": "Returns the friend list of a specified user. If the user's friend list is marked as private, returns HTTP 401 Unauthorized.",
+        "GetPlayerBans": "Returns ban status information for one or more players, including VAC bans, community bans, game bans, and economy bans.",
+        "GetPlayerSummaries": "Returns detailed profile information for one or more players, including username, profile URL, avatar, and game playtime.",
+        "ResolveVanityURL": "Resolves a custom Steam vanity URL to its corresponding SteamID. Supports individual profiles, groups, and official game groups."
+      }
+    },
+    {
+      "interface": "ISteamUserStats",
+      "description": "Used to access user achievements and statistics for games.",
+      "methods": {
+        "GetGlobalAchievementPercentagesForApp": "Retrieves the global achievement percentages for the specified app across all players.",
+        "GetNumberOfCurrentPlayers": "Returns the total number of players currently active in the specified app on Steam.",
+        "GetSchemaForGame": "Returns the complete list of stats and achievements for the specified game, including localized names and descriptions.",
+        "GetPlayerAchievements": "Returns the list of achievements the specified user has unlocked in an app.",
+        "GetUserStatsForGame": "Returns the list of statistics that the specified user has set in an app."
+      }
+    },
+    {
+      "interface": "ISteamApps",
+      "description": "Used to access data about applications on Steam."
+    },
+    {
+      "interface": "ISteamNews",
+      "description": "Provides access to the Steam News functionality."
+    },
+    {
+      "interface": "IStoreService",
+      "description": "Used to access public information from the Steam Store."
+    },
+    {
+      "interface": "IUserReviewsService",
+      "description": "Methods for reading Steam user reviews."
+    },
+    {
+      "interface": "ISteamWebAPIUtil",
+      "description": "Provides miscellaneous Web API related functionality through utility methods.",
+      "methods": {
+        "GetSupportedAPIList": "Returns the list of all supported Steam Web API methods and their parameters. This is used to build the official Steamworks documentation.",
+        "GetServerInfo": "Returns basic information about the Steam API servers."
+      }
+    }
+  ],
+  "game_development": [
+    {
+      "interface": "IGameInventory",
+      "description": "The primary interface to interact with the features/inventory/economy."
+    },
+    {
+      "interface": "IGameNotificationsService",
+      "description": "This is the interface used to interact with Game Notifications."
+    },
+    {
+      "interface": "IGameServersService",
+      "description": "Methods to improve the administration of Steam Game Servers."
+    },
+    {
+      "interface": "ISteamGameServerStats",
+      "description": "Interface to get and interact with game server stats."
+    },
+    {
+      "interface": "ISteamLeaderboards",
+      "description": "Used to access Steam leaderboards."
+    },
+    {
+      "interface": "ICheatReportingService",
+      "description": "This service allows your game to report cheats and cheaters to the features/anticheat#VAC system and provides the toolset behind the Game Bans system."
+    },
+    {
+      "interface": "ICloudService",
+      "description": "Steam Cloud API for use with cross-platform saves."
+    }
+  ],
+  "workshop_content": [
+    {
+      "interface": "ISteamRemoteStorage",
+      "description": "Primary interface for interacting with the Steam Workshop and User Generated Content (UGC)."
+    },
+    {
+      "interface": "IPublishedFileService",
+      "description": "Provides additional methods for interacting with Steam Workshop items."
+    },
+    {
+      "interface": "IWorkshopService",
+      "description": "Additional Steam Workshop service methods for publishers. See ISteamRemoteStorage to interact with Steam Workshop items directly."
+    },
+    {
+      "interface": "ISteamPublishedItemSearch",
+      "description": "Allows partners to globally search the content of their Steam Workshop."
+    },
+    {
+      "interface": "ISteamPublishedItemVoting",
+      "description": "Allows partners to access the voting information of the content in their Steam Workshop."
+    },
+    {
+      "interface": "IPublishedFileModerationService",
+      "description": "Provides methods for dealing with moderation of Steam Workshop items."
+    }
+  ],
+  "economy_trading": [
+    {
+      "interface": "IEconService",
+      "description": "Additional Steam Economy methods that provide access to Steam Trading."
+    },
+    {
+      "interface": "ISteamEconomy",
+      "description": "A secondary interface to interact with the features/inventory/economy."
+    },
+    {
+      "interface": "IEconMarketService",
+      "description": "Provides restricted access to the Steam Market for partners."
+    },
+    {
+      "interface": "IInventoryService",
+      "description": "This is the interface used to access the Steam Inventory Service."
+    }
+  ],
+  "monetization": [
+    {
+      "interface": "ISteamMicroTxn",
+      "description": "This is the interface used to support Microtransactions (In-Game Purchases)."
+    },
+    {
+      "interface": "ISteamMicroTxnSandbox",
+      "description": "Exposes the ISteamMicroTxn interface with a dummy database for development and testing purposes."
+    }
+  ],
+  "community_partner": [
+    {
+      "interface": "ISteamCommunity",
+      "description": "Provides restricted access to Steam Community features."
+    },
+    {
+      "interface": "IPlayerService",
+      "description": "Provides additional methods for interacting with Steam Users."
+    },
+    {
+      "interface": "ISteamUserAuth",
+      "description": "Used to access information about users."
+    }
+  ],
+  "broadcast": [
+    {
+      "interface": "IBroadcastService",
+      "description": "Provides access to Steam broadcasts."
+    }
+  ],
+  "specialized": [
+    {
+      "interface": "ILobbyMatchmakingService",
+      "description": "This is the interface used to access the Steam Lobby Service."
+    },
+    {
+      "interface": "IPartnerFinancialsService",
+      "description": "Used to access information on financial reporting."
+    },
+    {
+      "interface": "ISiteLicenseService",
+      "description": "APIs for the Steam Site License program (commercial licenses for multi-user sites such as PC Cafes, VR Arcades, Universities, etc)"
+    }
+  ]
+}

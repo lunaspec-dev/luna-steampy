@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Get the config directory (same directory as this file)
-CONFIG_DIR = Path(__file__).parent / "config"
+CONFIG_DIR = Path(__file__).parent / "config_data"
 CONFIG_FILE = CONFIG_DIR / "steam_api_config.json"
 GAMES_FILE = CONFIG_DIR / "examples" / "example_app_list.json"
 STEAM_IDS_FILE = CONFIG_DIR / "examples" / "example_steam_ids.json"
