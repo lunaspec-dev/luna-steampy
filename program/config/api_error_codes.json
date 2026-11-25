@@ -1,0 +1,41 @@
+{
+  "error_codes": {
+    "200": {
+      "status": "OK",
+      "description": "Request succeeded"
+    },
+    "400": {
+      "status": "Bad Request",
+      "description": "Invalid request parameters"
+    },
+    "401": {
+      "status": "Unauthorized",
+      "description": "Invalid or missing API key"
+    },
+    "403": {
+      "status": "Forbidden",
+      "description": "Access denied - insufficient permissions"
+    },
+    "404": {
+      "status": "Not Found",
+      "description": "Resource not found"
+    },
+    "429": {
+      "status": "Too Many Requests",
+      "description": "Rate limit exceeded - wait before retrying"
+    },
+    "500": {
+      "status": "Internal Server Error",
+      "description": "Steam API server error"
+    },
+    "502": {
+      "status": "Bad Gateway",
+      "description": "Steam API temporarily unavailable"
+    },
+    "503": {
+      "status": "Service Unavailable",
+      "description": "Steam API is under maintenance"
+    }
+  },
+  "documentation": "https://httpwg.org/specs/rfc9110.html#status.codes"
+}

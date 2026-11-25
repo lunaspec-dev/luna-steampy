@@ -1,0 +1,8 @@
+{
+  "_comment": "Boilerplate configuration for Steam API endpoints. Personal Steam ID is stored in auth/.env for redundant security.",
+  "_future_plans": "Dynamically load API interfaces and endpoint methods from config instead of hardcoding. Will allow for more dynamic and flexible API usage.",
+  "urls": {
+    "base_url": "https://api.steampowered.com",
+    "partner_url": "https://partner.steam-api.com"
+  }
+}

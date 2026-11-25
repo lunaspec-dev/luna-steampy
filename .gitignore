@@ -1,0 +1,21 @@
+# Contribution Files; I don't plan on creating contribution docs for a project still in starting stages.
+CONTRIBUTING.md
+
+# Credentials and secrets
+auth/.env
+
+# Ignore development and temporary files and directories
+# Dev examples can be loaded as config variables without committing to git
+program/config/examples/dev/
+
+# Python cache files
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Explicit Whitelist
+!auth/example.env
+!program/config/examples/
+!program/config/examples/example_app_list.json
+!program/config/examples/achievements_raw_response.json 
+

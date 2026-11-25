@@ -1,0 +1,14 @@
+{
+    "Bioshock Remastered": {
+        "appid": 409710,
+        "name": "Bioshock Remastered"
+    },
+    "Bioshock 2 Remastered": {
+        "appid": 409720,
+        "name": "Bioshock 2 Remastered"
+    },
+    "BioShock Infinite": {
+        "appid": 8870,
+        "name": "BioShock Infinite"
+    }
+}
