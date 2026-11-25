@@ -41,6 +41,24 @@ class ISteamUserStats(SteamAPIHandler):
         """Get achievements with unlocked/locked status and human-readable unlock times."""
         return self.game_stat_manager.format_user_achievement_stats(raw_response, appid, differentiate_locked, sort_by, return_raw)
 
+    def get_user_achievement_stats_for_game(self, steamid: str, appid: int, differentiate_locked: bool = True, sort_by: str = None, return_raw: bool = False) -> dict:
+        """Get formatted achievement stats for a player in a specific game.
+        
+        Full pipeline: fetch raw achievements → format with metadata → return usable data.
+        
+        Args:
+            steamid (str): Steam ID of the player
+            appid (int): App ID of the game
+            differentiate_locked (bool): Split achievements into achieved/locked dict. Defaults to True.
+            sort_by (str): Sort achievements by this key (e.g., 'name', 'unlock_time'). Defaults to None.
+            return_raw (bool): Include raw API response in result. Defaults to False.
+            
+        Returns:
+            dict: Formatted achievement stats with counts, game name, and achievements.
+        """
+        raw = self.fetch_user_achievements(steamid, appid)
+        return self.format_user_achievement_stats(raw, appid, differentiate_locked, sort_by, return_raw)
+
     def get_user_stats_for_game(self, steamid: str, appid: int) -> dict:
         """Get statistics for a player in a specific game."""
         return self.game_stat_manager.get_user_stats_for_game(steamid, appid)
