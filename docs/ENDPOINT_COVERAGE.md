@@ -27,28 +27,29 @@ See [DETAILS.md](DETAILS.md) for the full roadmap.
 
 ### ISteamUser
 
-Player and friend data operations. **Status: Complete for public endpoints.**
+Player and friend data operations. Facade methods (`get_*`) orchestrate full pipeline with aggregation and sorting; use `fetch_*` for raw API calls or intermediate methods for specific pipeline stages. **Status: Complete for public endpoints.**
 
 | Method | Description | Access Level |
 |--------|-------------|--------------|
-| `get_friend_list(steamid, relationship)` | Get a player's friend list | Public |
-| `get_player_summaries(steamids)` | Fetch player profile data (name, avatar, level, etc.) | Public |
-| `get_player_bans(steamids)` | Check if players are banned (VAC, game ban, etc.) | Public |
-| `resolve_vanity_url(vanity_url)` | Convert custom Steam URL to 64-bit Steam ID | Public |
+| `get_formatted_friends_list(steamid, group_by_relationship, sort_by)` | Full pipeline: fetch friend list, format with metadata, optionally group by relationship type (friend/ignored/blocked), and sort | Public |
+| `fetch_player_bans(steamids)` | Raw API response: check if players are banned (VAC, game ban, etc.) | Public |
+| `fetch_player_summaries(steamids)` | Raw API response: player profile data (name, avatar, level, etc.) | Public |
+| `resolve_vanity_url(vanityurl)` | Convert custom Steam URL to 64-bit Steam ID | Public |
 
 ### ISteamUserStats
 
-Player achievement and game statistics.
+Player achievement and game statistics. Facade methods (`get_*`) orchestrate the full pipeline; `fetch_*` returns raw API response; intermediate methods (prefixed `_` or public formatting methods) allow direct access to specific pipeline stages.
 
 | Method | Description | Access Level |
 |--------|-------------|--------------|
-| `fetch_schema_for_game(appid)` | Retrieve the stats and achievements schema for a game | Public |
-| `fetch_user_achievements(steamid, appid)` | Get raw player achievement data for a game | Public |
-| `format_user_achievement_stats(raw_response, appid, differentiate_locked, sort_by, return_raw)` | Enrich achievements with schema metadata (names, icons, descriptions, unlock times) | Public |
-| `get_user_completed_achievements(steamid, appid)` | Get achievements marked as completed by a player | Public |
-| `get_user_locked_achievements(steamid, appid)` | Get achievements marked as locked by a player | Public |
-| `get_global_achievement_percentages_for_app(appid)` | Get achievement completion percentages across all players | Public |
-| `get_global_stats_for_game(appid, count, names)` | Get global statistics for a game | Public |
+| `fetch_schema_for_game(appid)` | Raw API response: stats and achievements schema for a game | Public |
+| `fetch_user_achievements(steamid, appid)` | Raw API response: player achievement data for a game | Public |
+| `get_user_achievement_stats_for_game(steamid, appid, differentiate_locked, sort_by, return_raw)` | Full pipeline facade: fetch achievements and format with metadata, counts, and unlock times | Public |
+| `get_user_completed_achievements(steamid, appid)` | Intermediate: achievements marked as completed with schema enrichment (pre-configured pipeline) | Public |
+| `get_user_locked_achievements(steamid, appid)` | Intermediate: achievements marked as locked with schema enrichment (pre-configured pipeline) | Public |
+| `get_global_achievement_percentages_for_app(appid)` | Raw API response: achievement completion percentages across all players | Public |
+| `get_user_stats_for_game(steamid, appid)` | Raw API response: user-defined game statistics for a player | Public |
+| `get_global_stats_for_game(appid, count, names)` | Raw API response: global statistics for a game | Public |
 
 ### ISteamWebAPIUtil
 
