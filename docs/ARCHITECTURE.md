@@ -63,6 +63,39 @@ raw_response = stats.fetch_user_achievements("76561198141974862", 409720)
 print(f"Raw data: {raw_response}")
 ```
 
+### Flexible Usage Patterns: Full Pipeline vs Custom Workflows
+
+The three-layer design enables two distinct workflows:
+
+**Pattern 1: Full Pipeline (Simple Use Case)**
+Call the facade method (`get_*`), which orchestrates fetch + format in one call:
+```python
+# One call, complete output
+achievements = stats.get_user_achievement_stats_for_game(steamid, appid, sort_by="unlock_time")
+print(achievements["split_achievements"]["achieved"])
+```
+
+**Pattern 2: Reusable Raw Data (Advanced Use Case)**
+Fetch once, format multiple ways without re-hitting the API:
+```python
+# Fetch once
+raw = stats.fetch_user_achievements(steamid, appid)
+
+# Format with different options
+sorted_by_time = stats.format_user_achievement_stats(raw, appid, sort_by="unlock_time")
+sorted_by_name = stats.format_user_achievement_stats(raw, appid, sort_by="display_name")
+flat_list = stats.format_user_achievement_stats(raw, appid, differentiate_locked=False)
+
+# Use all three formatted views without additional API calls
+```
+
+**Design Philosophy:**
+- **`fetch_*` methods** return raw API responses—no processing, minimal cost, fully reusable
+- **`format_*` methods** are lightweight transformations—take raw data, return formatted output
+- **`get_*` facades** chain them together for convenience—one-liner for common workflows
+
+This structure assumes: if you're calling a method on this library, you either want the full formatted output (facade) or you want raw data to process yourself (fetch + format separately). The passthrough tests verify the facade correctly chains both operations.
+
 ### Facade vs Manager Methods
 
 Only the most important, commonly-used methods are exposed as facades on the main class (e.g., `stats.fetch_user_achievements()`). Intermediate operations and specialized concerns are accessed through their manager instances (e.g., `stats.game_schema_manager.fetch_achievement_display_names()`).

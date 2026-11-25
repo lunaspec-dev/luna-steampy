@@ -59,7 +59,7 @@ class TestFriendListParsing(unittest.TestCase):
             }
         }
         
-        result = self.user_api._get_user_friend_list_from_response(response)
+        result = self.user_api._retrieve_user_friend_list_from_response(response)
         self.assertEqual(len(result), 2)
         self.assertEqual(result[0]["steamid"], "123456")
         self.assertEqual(result[1]["steamid"], "789012")
@@ -72,7 +72,7 @@ class TestFriendListParsing(unittest.TestCase):
             }
         }
         
-        result = self.user_api._get_user_friend_list_from_response(response)
+        result = self.user_api._retrieve_user_friend_list_from_response(response)
         self.assertEqual(len(result), 0)
         self.assertIsInstance(result, list)
 
@@ -81,7 +81,7 @@ class TestFriendListParsing(unittest.TestCase):
         response = {}
         
         with self.assertRaises(ValueError) as context:
-            self.user_api._get_user_friend_list_from_response(response)
+            self.user_api._retrieve_user_friend_list_from_response(response)
         
         self.assertIn("No friends list found", str(context.exception))
 
@@ -90,7 +90,7 @@ class TestFriendListParsing(unittest.TestCase):
         response = {"friendslist": None}
         
         with self.assertRaises(ValueError) as context:
-            self.user_api._get_user_friend_list_from_response(response)
+            self.user_api._retrieve_user_friend_list_from_response(response)
         
         self.assertIn("No friends list found", str(context.exception))
 
@@ -364,7 +364,270 @@ class TestOtherMethods(unittest.TestCase):
         result = self.user_api.resolve_vanity_url("testvanity")
         
         self.assertIsNotNone(result)
-        self.assertIn("response", result)
+        self.assertEqual(result, "123456")
+
+
+class TestPlayerBanCategories(unittest.TestCase):
+    """Test cases for player ban formatting and categorization."""
+
+    def setUp(self) -> None:
+        """Set up test fixtures before each test."""
+        self.user_api = ISteamUser()
+
+    def tearDown(self) -> None:
+        """Clean up after each test."""
+        pass
+
+    @patch.object(ISteamUser, '_make_api_request')
+    def test_fetch_player_bans_single_clean_user(self, mock_request):
+        """Test fetching bans for a single clean user (no bans)."""
+        mock_request.return_value = {
+            "players": [
+                {
+                    "SteamId": "12345",
+                    "CommunityBanned": False,
+                    "VACBanned": False,
+                    "NumberOfVACBans": 0,
+                    "DaysSinceLastBan": 0,
+                    "NumberOfGameBans": 0,
+                    "EconomyBan": "none"
+                }
+            ]
+        }
+        
+        result = self.user_api.fetch_player_bans("12345")
+        self.assertIsNotNone(result)
+        self.assertEqual(len(result["players"]), 1)
+        self.assertFalse(result["players"][0]["CommunityBanned"])
+
+    @patch.object(ISteamUser, '_make_api_request')
+    def test_fetch_player_bans_single_vac_banned(self, mock_request):
+        """Test fetching bans for a single VAC banned user."""
+        mock_request.return_value = {
+            "players": [
+                {
+                    "SteamId": "67890",
+                    "CommunityBanned": False,
+                    "VACBanned": True,
+                    "NumberOfVACBans": 2,
+                    "DaysSinceLastBan": 100,
+                    "NumberOfGameBans": 0,
+                    "EconomyBan": "none"
+                }
+            ]
+        }
+        
+        result = self.user_api.fetch_player_bans("67890")
+        self.assertIsNotNone(result)
+        self.assertTrue(result["players"][0]["VACBanned"])
+        self.assertEqual(result["players"][0]["NumberOfVACBans"], 2)
+
+    @patch.object(ISteamUser, '_make_api_request')
+    def test_format_player_ban_clean_user(self, mock_request):
+        """Test formatting a clean player (all None values)."""
+        mock_request.return_value = {
+            "players": [
+                {
+                    "SteamId": "11111",
+                    "CommunityBanned": False,
+                    "VACBanned": False,
+                    "NumberOfVACBans": 0,
+                    "DaysSinceLastBan": 0,
+                    "NumberOfGameBans": 0,
+                    "EconomyBan": "none"
+                }
+            ]
+        }
+        
+        result = self.user_api.get_formatted_player_bans("11111")
+        player = result["user_info"][0]
+        
+        self.assertIsNone(player["vac_banned"])
+        self.assertIsNone(player["community_banned"])
+        self.assertIsNone(player["game_banned"])
+        self.assertIsNone(player["market_banned"])
+
+    @patch.object(ISteamUser, '_make_api_request')
+    def test_format_player_ban_all_bans(self, mock_request):
+        """Test formatting a player with multiple ban types."""
+        mock_request.return_value = {
+            "players": [
+                {
+                    "SteamId": "22222",
+                    "CommunityBanned": True,
+                    "VACBanned": True,
+                    "NumberOfVACBans": 1,
+                    "DaysSinceLastBan": 500,
+                    "NumberOfGameBans": 2,
+                    "EconomyBan": "banned",
+                    "bans": [
+                        {"AppIdMin": 730, "AppIdMax": 730, "BanStartTime": 1780525984, "BanType": 2, "BanProviderId": 0}
+                    ]
+                }
+            ]
+        }
+        
+        result = self.user_api.get_formatted_player_bans("22222")
+        player = result["user_info"][0]
+        
+        self.assertIsNotNone(player["vac_banned"])
+        self.assertIsNotNone(player["community_banned"])
+        self.assertIsNotNone(player["game_banned"])
+        self.assertIsNotNone(player["market_banned"])
+        self.assertEqual(player["game_banned"]["count"], 2)
+
+    @patch.object(ISteamUser, '_make_api_request')
+    def test_get_formatted_player_bans_flat_list(self, mock_request):
+        """Test flat list return (group_by_ban_category=False)."""
+        mock_request.return_value = {
+            "players": [
+                {
+                    "SteamId": "33333",
+                    "CommunityBanned": False,
+                    "VACBanned": True,
+                    "NumberOfVACBans": 1,
+                    "DaysSinceLastBan": 50,
+                    "NumberOfGameBans": 0,
+                    "EconomyBan": "none"
+                },
+                {
+                    "SteamId": "44444",
+                    "CommunityBanned": True,
+                    "VACBanned": False,
+                    "NumberOfVACBans": 0,
+                    "DaysSinceLastBan": 0,
+                    "NumberOfGameBans": 0,
+                    "EconomyBan": "none"
+                }
+            ]
+        }
+        
+        result = self.user_api.get_formatted_player_bans("33333,44444", group_by_ban_category=False)
+        
+        self.assertEqual(result["total_users_returned"], 2)
+        self.assertEqual(len(result["user_info"]), 2)
+        self.assertIn("total_banned_count", result)
+        self.assertIn("total_vac_banned_count", result)
+
+    @patch.object(ISteamUser, '_make_api_request')
+    def test_get_formatted_player_bans_categorized(self, mock_request):
+        """Test categorized return (group_by_ban_category=True)."""
+        mock_request.return_value = {
+            "players": [
+                {
+                    "SteamId": "55555",
+                    "CommunityBanned": False,
+                    "VACBanned": True,
+                    "NumberOfVACBans": 1,
+                    "DaysSinceLastBan": 50,
+                    "NumberOfGameBans": 0,
+                    "EconomyBan": "none"
+                },
+                {
+                    "SteamId": "66666",
+                    "CommunityBanned": True,
+                    "VACBanned": True,
+                    "NumberOfVACBans": 1,
+                    "DaysSinceLastBan": 100,
+                    "NumberOfGameBans": 1,
+                    "EconomyBan": "none"
+                }
+            ]
+        }
+        
+        result = self.user_api.get_formatted_player_bans("55555,66666", group_by_ban_category=True)
+        
+        self.assertEqual(result["total_players"], 2)
+        self.assertIn("vac_banned", result)
+        self.assertIn("community_banned", result)
+        self.assertEqual(result["vac_banned"]["count"], 2)  # Both users have VAC bans
+        self.assertEqual(result["community_banned"]["count"], 1)  # Only second user
+
+    @patch.object(ISteamUser, '_make_api_request')
+    def test_ban_categorization_with_overlap(self, mock_request):
+        """Test that players with multiple bans appear in multiple bins."""
+        mock_request.return_value = {
+            "players": [
+                {
+                    "SteamId": "77777",
+                    "CommunityBanned": False,
+                    "VACBanned": False,
+                    "NumberOfVACBans": 0,
+                    "DaysSinceLastBan": 0,
+                    "NumberOfGameBans": 0,
+                    "EconomyBan": "none"
+                },
+                {
+                    "SteamId": "88888",
+                    "CommunityBanned": True,
+                    "VACBanned": True,
+                    "NumberOfVACBans": 2,
+                    "DaysSinceLastBan": 200,
+                    "NumberOfGameBans": 1,
+                    "EconomyBan": "banned"
+                }
+            ]
+        }
+        
+        result = self.user_api.get_formatted_player_bans("77777,88888", group_by_ban_category=True)
+        
+        # Second user should appear in all 4 bins
+        self.assertEqual(result["vac_banned"]["count"], 1)
+        self.assertEqual(result["community_banned"]["count"], 1)
+        self.assertEqual(result["game_banned"]["count"], 1)
+        self.assertEqual(result["economy_banned"]["count"], 1)
+        # Total bans = 4 (one player in all bins)
+        self.assertEqual(result["total_bans"], 4)
+
+    @patch.object(ISteamUser, '_make_api_request')
+    def test_ban_market_probation_state(self, mock_request):
+        """Test economy ban with probation status."""
+        mock_request.return_value = {
+            "players": [
+                {
+                    "SteamId": "99999",
+                    "CommunityBanned": False,
+                    "VACBanned": False,
+                    "NumberOfVACBans": 0,
+                    "DaysSinceLastBan": 0,
+                    "NumberOfGameBans": 0,
+                    "EconomyBan": "probation"
+                }
+            ]
+        }
+        
+        result = self.user_api.get_formatted_player_bans("99999")
+        player = result["user_info"][0]
+        
+        self.assertIsNotNone(player["market_banned"])
+        self.assertEqual(player["market_banned"]["type"], "probation")
+
+    @patch.object(ISteamUser, '_make_api_request')
+    def test_ban_with_detailed_game_bans(self, mock_request):
+        """Test game ban with detailed ban information."""
+        mock_request.return_value = {
+            "players": [
+                {
+                    "SteamId": "111111",
+                    "CommunityBanned": False,
+                    "VACBanned": False,
+                    "NumberOfVACBans": 0,
+                    "DaysSinceLastBan": 0,
+                    "NumberOfGameBans": 2,
+                    "EconomyBan": "none",
+                    "bans": [
+                        {"AppIdMin": 730, "AppIdMax": 730, "BanStartTime": 1780525984, "BanType": 2, "BanProviderId": 0},
+                        {"AppIdMin": 570, "AppIdMax": 570, "BanStartTime": 1780525900, "BanType": 2, "BanProviderId": 0}
+                    ]
+                }
+            ]
+        }
+        
+        result = self.user_api.get_formatted_player_bans("111111")
+        player = result["user_info"][0]
+        
+        self.assertEqual(player["game_banned"]["count"], 2)
+        self.assertEqual(len(player["game_banned"]["bans"]), 2)
 
 
 if __name__ == "__main__":

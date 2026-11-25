@@ -86,7 +86,7 @@ class GameStatManager(SteamAPIHandler):
         params = {"steamid": steamid, "appid": appid}
         return self._make_api_request(endpoint, params)
 
-    def _fetch_user_achievements_from_response(self, raw_response: dict) -> dict:
+    def _retrieve_user_achievements_from_response(self, raw_response: dict) -> dict:
         """Validate response structure and extract basic achievement metadata.
         
         Args:

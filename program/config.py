@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 CONFIG_DIR = Path(__file__).parent / "config"
 CONFIG_FILE = CONFIG_DIR / "steam_api_config.json"
 GAMES_FILE = CONFIG_DIR / "examples" / "example_app_list.json"
+STEAM_IDS_FILE = CONFIG_DIR / "examples" / "example_steam_ids.json"
 
 
 def load_config() -> dict:
@@ -54,6 +55,25 @@ def load_example_games() -> dict:
         return {}
 
 
+def load_example_steam_ids() -> dict:
+    """Load example Steam IDs for testing bans feature.
+    
+    Returns a dict of user entries with steamid and description fields.
+    Users should populate this file with their own Steam IDs or friends' IDs.
+    """
+    try:
+        with open(STEAM_IDS_FILE, "r") as f:
+            data = json.load(f)
+        logger.info(f"Loaded example Steam IDs from {STEAM_IDS_FILE}")
+        return data.get("users", {})
+    except FileNotFoundError:
+        logger.warning(f"Steam IDs file not found: {STEAM_IDS_FILE}. Using empty dict.")
+        return {}
+    except json.JSONDecodeError as e:
+        logger.error(f"Invalid JSON in Steam IDs file: {e}")
+        return {}
+
+
 # Load configuration
 import os
 import dotenv
@@ -69,11 +89,17 @@ STEAM_API_BASE_URL = CONFIG["urls"]["base_url"]
 STEAM_API_PARTNER_URL = CONFIG["urls"]["partner_url"]
 PERSONAL_STEAM_ID = os.getenv("PERSONAL_STEAM_ID")
 
+# Ban types for categorization (can be overridden via STEAM_BAN_TYPES env var)
+STEAM_BAN_TYPES = os.getenv("STEAM_BAN_TYPES", "vac_banned,community_banned,game_banned,economy_banned").split(",")
+
 # Load example games
 EXAMPLE_GAMES = load_example_games()
 
 # Convenience access to game IDs only
 EXAMPLE_GAME_IDS = [game_data["appid"] for game_data in EXAMPLE_GAMES.values()]
+
+# Load example Steam IDs for testing
+EXAMPLE_STEAM_IDS = load_example_steam_ids()
 
 
 # Validation

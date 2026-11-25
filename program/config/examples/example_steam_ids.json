@@ -1,0 +1,20 @@
+{
+    "users": {
+        "clean_account": {
+            "steamid": "76561198012345678",
+            "name": "Your Account",
+            "description": "N/A"
+        },
+        "frost": {
+            "steamid": "76561198199957053",
+            "name": "Frost",
+            "description": "N/A"
+        }
+    },
+    "notes": {
+        "how_to_use": "Replace the steamid values with real Steam IDs (your own or your friends')",
+        "how_to_find_steam_id": "Visit https://steamcommunity.com/profiles/[steamid]",
+        "steam_id_format": "Steam IDs are 64-bit numbers (e.g., 76561198012345678)",
+        "testing": "Use these IDs with get_formatted_player_bans() to test the bans feature"
+    }
+}
