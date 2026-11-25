@@ -29,7 +29,6 @@ services:
         condition: service_healthy
     volumes:
       - ./program:/app
-      - ./auth/.env:/app/.env:ro
     environment:
       MONGO_URI: mongodb://mongodb:27017/steam_api_data
       PYTHONUNBUFFERED: 1
