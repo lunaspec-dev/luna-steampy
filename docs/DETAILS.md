@@ -50,11 +50,17 @@ Using a method without proper credentials will raise an error with context about
 
 ## Data Storage & Docker
 
-**Current approach:** Data instances are kept in program memory for the lifetime of the application. The library outputs structured Python objects and JSON natively. This works well for simple workflows and testing.
+**Current approach:** Docker containerization with MongoDB integration is now available. The library outputs structured Python objects and JSON natively, with optional database persistence via `MongoDBManager`.
 
-**Future:** Once database integration is added, Docker containerization will be implemented to simplify deployment and data persistence across application restarts. The library will provide transformation methods to shape fetched data for any backend (SQL, MongoDB, pandas, web apps) without vendor lock-in. All data remains portable and backend-agnostic.
+**Setup options:**
+- **Local Python** - Install dependencies with pip, run scripts directly for quick iteration
+- **Docker + MongoDB** - Use `./fresh-start.sh` for containerized environment with database integration
+
+See [SETUP.md](SETUP.md) for detailed instructions on both approaches.
+
+All data remains portable and backend-agnostic. The library transforms fetched Steam data for any backend (SQL, MongoDB, pandas, web apps) without vendor lock-in.
 
 Planned storage backends:
 - **SQL (PostgreSQL/SQLite)** - For relational queries and analytics
-- **MongoDB** - For flexible document storage
+- **MongoDB** - For flexible document storage (currently via `MongoDBManager`)
 - **JSON output** - For web apps and dashboards

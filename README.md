@@ -36,14 +36,18 @@ print(f"Unlocked: {formatted['unlocked']}")
 
 ## Setup
 
+**Local (Python only):**
 ```bash
 cd luna-steampy
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+pip install -r program/requirements.txt
 ```
 
-Then follow [SETUP.md](docs/SETUP.md) to add your credentials.
+**Docker (with MongoDB):**
+```bash
+./fresh-start.sh
+```
+
+Then follow [SETUP.md](docs/SETUP.md) to add your Steam credentials and choose your setup path.
 
 ## What You Can Do
 
